@@ -24,10 +24,11 @@ const { data, isLoading, refetch } = useKanbanQuery();
             {{ column.name }}
           </div>
           <div>
+            <KanbanCreateDeal :refetch="refetch" :status="column.id" />
             <UICard
               v-for="card in column.items"
               :key="card.id"
-              class="mt-3 flex flex-col"
+              class="mb-5 flex flex-col gap-2 p-3 bg-[#121b33] rounded animation border border-transparent transition-colors hover:border-[#a252c83d]"
               draggable="true"
             >
               <UICardHeader role="button"
@@ -37,7 +38,10 @@ const { data, isLoading, refetch } = useKanbanQuery();
                 }}</UiCardDescription>
               </UICardHeader>
 
-              <UICardContent class=" text-xs">Компания {{ card.companyName }}</UICardContent>
+              <UICardContent class="text-xs"
+                >Компания
+                <h3>{{ card.companyName }}</h3>
+              </UICardContent>
               <UICardFooter>{{
                 dayjs(card.$createdAt).format("DD.MM.YYYY")
               }}</UICardFooter>

@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     "shadcn-nuxt",
     "nuxt-icon",
     "@pinia/nuxt",
+  
     [
       "@nuxtjs/google-fonts",
       {
@@ -18,12 +19,19 @@ export default defineNuxtConfig({
         },
       },
     ],
+    [
+      '@vee-validate/nuxt',
+      {
+        // disable or enable auto imports
+        autoImports: true,
+      },
+    ],
   ],
   shadcn: {
     prefix: "ui",
     componentDir: "./components/ui",
   },
   pinia: {
-    storesDirs: ['./stores/**'],
+    storesDirs: ["./stores/**"],
   },
 });
