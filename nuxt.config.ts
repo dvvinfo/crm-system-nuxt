@@ -2,12 +2,13 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
+    "@nuxt/ui",
     "@nuxt/image",
-    "@nuxtjs/tailwindcss",
+    // "@nuxtjs/tailwindcss",
     "shadcn-nuxt",
     "nuxt-icon",
     "@pinia/nuxt",
-  
+
     [
       "@nuxtjs/google-fonts",
       {
@@ -20,7 +21,7 @@ export default defineNuxtConfig({
       },
     ],
     [
-      '@vee-validate/nuxt',
+      "@vee-validate/nuxt",
       {
         // disable or enable auto imports
         autoImports: true,
